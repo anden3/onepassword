@@ -10,7 +10,8 @@ mod util;
 
 pub use {buffer::RustBuffer, errors::Error, util::validate_checksums, util::version};
 
-#[link(name = "op_uniffi_core", kind = "raw-dylib")]
+#[cfg_attr(windows, link(name = "op_uniffi_core", kind = "raw-dylib"))]
+#[cfg_attr(not(windows), link(name = "op_uniffi_core"))]
 unsafe extern "C" {
     #[link_name = "uniffi_op_uniffi_core_fn_func_init_client"]
     unsafe fn uniffi_init_client(buffer: RustBuffer) -> futures::FfiFutureHandle<RustBuffer>;
@@ -19,14 +20,16 @@ unsafe extern "C" {
 }
 
 #[cfg(feature = "sync")]
-#[link(name = "op_uniffi_core", kind = "raw-dylib")]
+#[cfg_attr(windows, link(name = "op_uniffi_core", kind = "raw-dylib"))]
+#[cfg_attr(not(windows), link(name = "op_uniffi_core"))]
 unsafe extern "C" {
     #[link_name = "uniffi_op_uniffi_core_fn_func_invoke_sync"]
     unsafe fn uniffi_invoke_sync(buffer: RustBuffer, status: *mut CallStatus) -> RustBuffer;
 }
 
 #[cfg(feature = "async")]
-#[link(name = "op_uniffi_core", kind = "raw-dylib")]
+#[cfg_attr(windows, link(name = "op_uniffi_core", kind = "raw-dylib"))]
+#[cfg_attr(not(windows), link(name = "op_uniffi_core"))]
 unsafe extern "C" {
     #[link_name = "uniffi_op_uniffi_core_fn_func_invoke"]
     unsafe fn uniffi_invoke(buffer: RustBuffer) -> futures::FfiFutureHandle<RustBuffer>;

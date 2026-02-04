@@ -1,6 +1,6 @@
 [package]
 name = "onepassword-async"
-version = "0.1.0"
+version = "0.1.1"
 description = "Safe, natively async wrapper around `onepassword-sys`."
 edition = { workspace = true }
 license = { workspace = true }

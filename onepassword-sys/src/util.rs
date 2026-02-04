@@ -1,6 +1,7 @@
 use preinterpret::preinterpret;
 
-#[link(name = "op_uniffi_core", kind = "raw-dylib")]
+#[cfg_attr(windows, link(name = "op_uniffi_core", kind = "raw-dylib"))]
+#[cfg_attr(not(windows), link(name = "op_uniffi_core"))]
 unsafe extern "C" {
     #[link_name = "ffi_op_uniffi_core_uniffi_contract_version"]
     safe fn uniffi_contract_version() -> u32;
@@ -34,7 +35,8 @@ pub(crate) use rust_call;
 
 macro_rules! link_checksum_fns {
     ($($fn:ident: $checksum:literal),+) => {preinterpret! {
-        #[link(name = "op_uniffi_core", kind = "raw-dylib")]
+        #[cfg_attr(windows, link(name = "op_uniffi_core", kind = "raw-dylib"))]
+        #[cfg_attr(not(windows), link(name = "op_uniffi_core"))]
         unsafe extern "C" {
             $(
                 #[link_name = concat!("uniffi_op_uniffi_core_checksum_func_", stringify!($fn))]

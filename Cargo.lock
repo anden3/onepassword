@@ -22,7 +22,7 @@ checksum = "f52b00d39961fc5b2736ea853c9cc86238e165017a493d1d5c8eac6bdc4cc273"
 
 [[package]]
 name = "onepassword"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "onepassword-shared",
  "onepassword-sys",
@@ -34,7 +34,7 @@ dependencies = [
 
 [[package]]
 name = "onepassword-async"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "onepassword-shared",
  "onepassword-sys",
@@ -46,14 +46,14 @@ dependencies = [
 
 [[package]]
 name = "onepassword-shared"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "serde",
 ]
 
 [[package]]
 name = "onepassword-sys"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "byteorder",
  "pollster",

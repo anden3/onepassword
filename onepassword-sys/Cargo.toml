@@ -1,6 +1,6 @@
 [package]
 name = "onepassword-sys"
-version = "0.1.0"
+version = "0.1.1"
 description = "Mostly raw bindings to the 1Password SDK"
 edition = { workspace = true }
 license = { workspace = true }

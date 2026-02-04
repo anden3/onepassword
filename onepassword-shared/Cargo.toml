@@ -1,6 +1,6 @@
 [package]
 name = "onepassword-shared"
-version = "0.1.0"
+version = "0.1.1"
 description = "Types and maybe other things shared between `onepassword` and `onepassword-async`."
 edition = { workspace = true }
 license = { workspace = true }

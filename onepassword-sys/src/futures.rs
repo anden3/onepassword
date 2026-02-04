@@ -54,7 +54,8 @@ pub(crate) trait FfiFutureReturnValue {
 macro_rules! declare_futures {
     ($($kind:ty),+) => {
         preinterpret! {
-            #[link(name = "op_uniffi_core", kind = "raw-dylib")]
+            #[cfg_attr(windows, link(name = "op_uniffi_core", kind = "raw-dylib"))]
+            #[cfg_attr(not(windows), link(name = "op_uniffi_core"))]
             unsafe extern "C" {
                 $(
                     #[link_name = [!snake! "ffi_op_uniffi_core_rust_future_poll_" $kind]]
