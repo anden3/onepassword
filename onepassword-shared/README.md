@@ -1,0 +1,1 @@
+Types and maybe other things shared between `onepassword` and `onepassword-async`.

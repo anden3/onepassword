@@ -1,7 +1,11 @@
 [package]
 name = "onepassword"
 version = "0.1.0"
-edition = "2024"
+description = "Safe, (almost entirely) natively sync wrapper around `onepassword-sys`."
+edition = { workspace = true }
+license = { workspace = true }
+authors = { workspace = true }
+keywords = { workspace = true }
 
 [dependencies]
 onepassword-shared = { workspace = true }

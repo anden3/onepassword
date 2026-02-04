@@ -18,6 +18,7 @@ impl Error {
 }
 
 #[repr(u8)]
+#[expect(dead_code)]
 pub(crate) enum CallStatusCode {
     Success = 0,
     Error = 1,

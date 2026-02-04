@@ -8,6 +8,7 @@ use super::errors::CallStatus;
 unsafe extern "C" {
     #[link_name = "ffi_op_uniffi_core_rustbuffer_alloc"]
     unsafe fn rustbuffer_alloc(size: u32, status: *mut CallStatus) -> RustBuffer;
+    #[expect(dead_code)]
     #[link_name = "ffi_op_uniffi_core_rustbuffer_from_bytes"]
     unsafe fn rustbuffer_from_bytes(bytes: ForeignBytes, status: *mut CallStatus) -> RustBuffer;
     #[link_name = "ffi_op_uniffi_core_rustbuffer_free"]

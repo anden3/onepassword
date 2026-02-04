@@ -7,9 +7,17 @@ members = [
     "onepassword-sys",
 ]
 
+[workspace.package]
+authors = ["anden3"]
+description = "Rust bindings for 1Password SDK"
+repository = "https://github.com/anden3/onepassword"
+keywords = ["1password", "1pass", "password"]
+edition = "2024"
+license = "MIT"
+
 [workspace.dependencies]
-onepassword-shared = { path = "./onepassword-shared" }
-onepassword-sys = { path = "./onepassword-sys" }
+onepassword-shared = { version = "0.1.0", path = "./onepassword-shared" }
+onepassword-sys = { version = "0.1.0", path = "./onepassword-sys" }
 
 byteorder = "1.5.0"
 pollster = "0.4.0"
